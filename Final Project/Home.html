@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Star Wars Blog</title>
+
+    <style type="text/css">
+        header {
+            text-align: center;
+            background-color: black;
+        }
+        body {
+            font-family: Arial,sans-serif;
+        }
+
+        body {background-image:url(br.jpg);
+            background-position:center;
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+        }
+        div {
+            text-align: center;
+            width: 50%;
+            position: relative;
+            left: 25%;
+            border-width: 4px;
+        }
+        .solid {
+            border-style: solid;
+        }
+        strong {
+            color: white;
+        }
+
+        /*The Scroll Up Star Wars Title*/
+        #titles
+        {
+            position: absolute;
+            width: 18em;
+            height: 50em;
+            bottom: 0;
+            left: 50%;
+            margin-left: -9em;
+            font-size: 350%;
+            font-weight: bold;
+            text-align: justify;
+            overflow: hidden;
+            transform-origin: 50% 100%;
+            transform: perspective(300px) rotateX(25deg);
+            color:gold;
+        }
+        #titles:after
+        {
+            position: absolute;
+            content: ' ';
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 60%;
+            background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+            pointer-events: none;
+        }
+        #titlecontent
+        {
+            position: absolute;
+            top: 100%;
+            animation: scroll 100s linear 4s infinite;
+        }
+
+        @keyframes scroll {
+            0% { top: 100%; }
+            100% { top: -170%; }
+        }
+
+        /*Nav bar*/
+        /* Remove margins and padding from the list, and add a black background color */
+        ul.topnav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        /* Float the list items side by side */
+        ul.topnav li {float: left;}
+
+        /* Style the links inside the list items */
+        ul.topnav li a {
+            display: inline-block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        /* Change background color of links on hover */
+        ul.topnav li a:hover {background-color: #555;}
+
+        /* Hide the list item that contains the link that should open and close the topnav on small screens */
+        ul.topnav li.icon {display: none;}
+
+        /* Media */
+
+        /* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
+        @media screen and (max-width:680px) {
+            ul.topnav li:not(:first-child) {display: none;}
+            ul.topnav li.icon {
+                float: right;
+                display: inline-block;
+            }
+        }
+
+        /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens */
+        @media screen and (max-width:680px) {
+            ul.topnav.responsive {position: relative;}
+            ul.topnav.responsive li.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            ul.topnav.responsive li {
+                float: none;
+                display: inline;
+            }
+            ul.topnav.responsive li a {
+                display: block;
+                text-align: left;
+            }
+        }
+
+        /*search*/
+
+        .input[type=text] {
+            width: 130px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+        #searchThis {
+            float: right;
+        }
+
+        #searchBox {
+            height: inherit;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+    </script>
+
+
+
+</head>
+<body>
+<header><img src="head1.png" style="height: 341px" alt="head"></header>
+
+<nav>
+    <ul class="topnav" id="myTopnav">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="News.html">News</a></li>
+        <li><a href="Games.html">Games</a></li>
+
+
+        <li class="icon">
+            <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+        </li>
+
+        <!-- Search Bar-->
+        <form id="searchThis" action="https://www.google.com/" style="display: inline;" method="get">
+            <input onfocus="if(this.value==this.defaultValue)this.value='';" value="Search this blog" type="text" id="searchBox" onblur="if(this.value=='')this.value=this.defaultValue;" name="q" />
+            <input id="searchButton" value="Go" type="submit" />
+        </form>
+
+
+    </ul>
+</nav>
+
+<div class="solid"><h1>Welcome to my Star Wars page!</h1><strong>This is an informational page on everything Star Wars related. Feel free to explore the site and contact me if you have anything to add. Enjoy!</strong></div>
+
+<div class="solid">
+    
+    <div id="titles">
+        <div id="titlecontent">
+
+            <p class="center">STAR WARS
+                <br />CS 81</p>
+
+            <p>Devin was given a project.</p>
+
+            <p>And with this project he decided to combine his love for
+                Star Wars and </p>
+            <p>web design, javascript and css to make a Star Wars web page.</p>
+
+            <p>He enjoyed this class very much. And thanks his professor for helping</p><p> him along in his
+            journey to become a jedi computer master. </p>
+
+            <p>Now he must use these new found skills to further him on his quest and to
+            </p><p>defeat the dark evils of procrastination. As he looks to bring balance to the force. </p>
+        </div></div>
+    
+
+</body>
+
+
+
+</html>
